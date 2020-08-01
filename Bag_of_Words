@@ -1,0 +1,13 @@
+def mystery_bow_function(training_data):
+  bow_dictionary = {}
+  tokens = preprocess_text(training_data)
+  for token in tokens:
+    if token in bow_dictionary:
+      bow_dictionary[token] += 1
+    else:
+      bow_dictionary[token] = 1
+  return bow_dictionary
+
+print(mystery_bow_function("Squealing suitcase squids are not like regular squids."))
+
+# {'regular': 1, 'squeal': 1, 'squid': 2, 'be': 1, 'like': 1, 'suitcase': 1, 'not': 1}
